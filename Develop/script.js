@@ -1,5 +1,3 @@
-
-
 // DECLARING VARIABLES
 var pickedCriteria=[];
 var letters=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
@@ -77,7 +75,11 @@ function confirmCriteria() {
 
 // GET PASSWORD LENGTH FROM USER
 function promptLength() {
-  passLength=parseInt(prompt("How many characters will the password be betweenn 8 and 128?"));
+  passLength=parseInt(prompt("How many characters will the password be between 8 and 128?"));
+  if (passLength<8 || passLength>128) {
+    alert("I'm sorry please try again. Choose a number between 8 and 128");
+    passLength=parseInt(prompt("How many characters will the password be between 8 and 128?"));
+  }
   alert("Password length set to: "+passLength+" characters");
   console.log(passLength);
 }
@@ -110,7 +112,7 @@ function randomChar() {
 
 
 
-
+// RUN FINAL 
 promptLength();
 promptChars();
 confirmCriteria();
